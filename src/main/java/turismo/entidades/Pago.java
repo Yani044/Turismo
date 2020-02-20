@@ -5,10 +5,21 @@
  */
 package turismo.entidades;
 
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Genesis
  */
+@Entity
 public class Pago {
-    
+    @Id
+    String Id;
+    Reserva reserva;
+    boolean tipoTarjeta;
+    Integer numeroTarjeta;
+    int codigoSeguridad;
+    Date fechaVencimiento;
 }
