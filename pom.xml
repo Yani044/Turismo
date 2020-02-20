@@ -7,12 +7,6 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
             <groupId>edu.egg</groupId>
             <artifactId>tinder-nico</artifactId>
             <version>0.0.1-SNAPSHOT</version>
