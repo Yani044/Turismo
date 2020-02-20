@@ -22,6 +22,8 @@ public class Reserva {
     private Hotel hotel;
     @OneToOne
     private Direccion direccion;
+    @OneToOne(mappedBy = "reserva")
+    private Pago pago;
     
     public Reserva(){
     
