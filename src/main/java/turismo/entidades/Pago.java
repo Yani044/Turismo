@@ -23,6 +23,10 @@ public class Pago {
     int codigoSeguridad;
     Date fechaVencimiento;
 
+    public Pago() {
+    }
+    
+
     public Pago(String Id, Reserva reserva, boolean tipoTarjeta, Integer numeroTarjeta, int codigoSeguridad, Date fechaVencimiento) {
         this.Id = Id;
         this.reserva = reserva;
