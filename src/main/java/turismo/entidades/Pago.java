@@ -8,6 +8,8 @@ package turismo.entidades;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -17,10 +19,12 @@ import javax.persistence.Id;
 public class Pago {
     @Id
     String Id;
+    @OneToOne(mappedBy = "pago")
     Reserva reserva;
     boolean tipoTarjeta;
     Integer numeroTarjeta;
     int codigoSeguridad;
+    @Temporal(javax.persistence.TemporalType.DATE)
     Date fechaVencimiento;
 
     public Pago() {
