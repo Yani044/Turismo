@@ -1,3 +1,5 @@
+package turismo.entidades;
+
 
 
 import java.util.Date;
