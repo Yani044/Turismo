@@ -13,7 +13,7 @@ public class Usuario {
     private String apellido;
     private String email;
     private String dni;
-    private String telefono;
+    private Integer telefono;
 
     public Usuario() {
     }
