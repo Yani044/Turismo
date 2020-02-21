@@ -20,7 +20,7 @@ public class Usuario {
     
     
 
-    public Usuario (String id, String nombre, String apellido, String email, String dni, String telefono) {
+    public Usuario (String id, String nombre, String apellido, String email, String dni, Integer telefono) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -70,11 +70,11 @@ public class Usuario {
         this.dni = dni;
     }
 
-    public String getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
     
