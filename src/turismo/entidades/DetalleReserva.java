@@ -1,51 +1,48 @@
 package turismo.entidades;
 
-
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
+@Table(name = "DetalleReservas")
 public class DetalleReserva {
+
     @Id
-    private String id;
-    @OneToMany
-    private Estado estado;
+    private Integer id;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaActividad;
     private Integer cantidadDePersonas;
     private String Aclaraciones;
     @ManyToOne
     private Reserva reserva;
     @ManyToOne
     private Producto producto;
-    
-    public DetalleReserva(){
-    
+
+    public DetalleReserva() {
+
     }
 
-    public DetalleReserva(String id, Estado estado, Integer cantidadDePersonas, String Aclaraciones, Reserva reserva, Producto producto) {
+    public DetalleReserva(Integer id, Date fechaActividad, Integer cantidadDePersonas, String Aclaraciones, Reserva reserva, Producto producto) {
         this.id = id;
-        this.estado = estado;
+        this.fechaActividad = fechaActividad;
         this.cantidadDePersonas = cantidadDePersonas;
         this.Aclaraciones = Aclaraciones;
         this.reserva = reserva;
         this.producto = producto;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
     }
 
     public Integer getCantidadDePersonas() {
@@ -79,8 +76,13 @@ public class DetalleReserva {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
-    
-    
-    
-    
+
+    public Date getFechaActividad() {
+        return fechaActividad;
+    }
+
+    public void setFechaActividad(Date fechaActividad) {
+        this.fechaActividad = fechaActividad;
+    }
+
 }

@@ -4,31 +4,33 @@ package turismo.entidades;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "hoteles")
 public class Hotel {
     @Id
-    String id;
-    String nombre;
-    String habitacion;
+    private Integer id;
+    private String nombre;
+    private String habitacion;
     @OneToOne
-    Direccion direccion;
+    private Direccion direccion;
 
     public Hotel() {
     }
 
-    public Hotel(String id, String nombre, String habitacion, Direccion direccion) {
+    public Hotel(Integer id, String nombre, String habitacion, Direccion direccion) {
         this.id = id;
         this.nombre = nombre;
         this.habitacion = habitacion;
         this.direccion = direccion;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

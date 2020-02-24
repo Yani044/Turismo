@@ -2,13 +2,15 @@ package turismo.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table(name = "usuarios")
 public class Usuario {
 @Id    
-    private String id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private String email;
@@ -20,7 +22,7 @@ public class Usuario {
     
     
 
-    public Usuario (String id, String nombre, String apellido, String email, String dni, Integer telefono) {
+    public Usuario (Integer id, String nombre, String apellido, String email, String dni, Integer telefono) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,11 +32,11 @@ public class Usuario {
     }
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String Id) {
+    public void setId(Integer Id) {
         this.id = Id;
     }
 

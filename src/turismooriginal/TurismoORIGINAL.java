@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agencia;
+package turismooriginal;
 
 /**
  *
  * @author nicol
  */
-public class Agencia {
+public class TurismoORIGINAL {
 
     /**
      * @param args the command line arguments

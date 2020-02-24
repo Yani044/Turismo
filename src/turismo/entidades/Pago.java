@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 /**
@@ -16,22 +17,23 @@ import javax.persistence.Temporal;
  * @author Genesis
  */
 @Entity
+@Table(name = "pagos")
 public class Pago {
+
     @Id
-    String Id;
+    private Integer Id;
     @OneToOne(mappedBy = "pago")
-    Reserva reserva;
-    boolean tipoTarjeta;
-    Integer numeroTarjeta;
-    int codigoSeguridad;
+    private Reserva reserva;
+    private boolean tipoTarjeta;
+    private Integer numeroTarjeta;
+    private int codigoSeguridad;
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date fechaVencimiento;
+    private Date fechaVencimiento;
 
     public Pago() {
     }
-    
 
-    public Pago(String Id, Reserva reserva, boolean tipoTarjeta, Integer numeroTarjeta, int codigoSeguridad, Date fechaVencimiento) {
+    public Pago(Integer Id, Reserva reserva, boolean tipoTarjeta, Integer numeroTarjeta, int codigoSeguridad, Date fechaVencimiento) {
         this.Id = Id;
         this.reserva = reserva;
         this.tipoTarjeta = tipoTarjeta;
@@ -40,11 +42,11 @@ public class Pago {
         this.fechaVencimiento = fechaVencimiento;
     }
 
-    public String getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(String Id) {
+    public void setId(Integer Id) {
         this.Id = Id;
     }
 
@@ -87,6 +89,5 @@ public class Pago {
     public void setFechaVencimiento(Date fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
-    
-    
+
 }
