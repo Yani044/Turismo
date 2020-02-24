@@ -1,47 +1,49 @@
 package turismo.entidades;
 
-
-
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-  @Entity
+@Entity
+@Table(name = "reservas")
 public class Reserva {
-      @Id
-    private String id;
-      @ManyToOne
+
+    @Id
+    private Integer id;
+    @ManyToOne
     private Usuario usuario;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCreacion;
     private Hotel hotel;
     @OneToOne
     private Direccion direccion;
-    @OneToOne(mappedBy = "reserva")
+
+    @OneToOne
     private Pago pago;
-    
-    public Reserva(){
-    
+
+    public Reserva() {
+
     }
 
-    public Reserva(String id, Usuario usuario, Date fechaCreacion, Hotel idHotel, Direccion idDireccion) {
+    public Reserva(Integer id, Usuario usuario, Date fechaCreacion, Hotel hotel, Direccion direccion) {
         this.id = id;
         this.usuario = usuario;
         this.fechaCreacion = fechaCreacion;
-        this.idHotel = idHotel;
-        this.idDireccion = idDireccion;
+        this.hotel = hotel;
+        this.direccion = direccion;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -62,22 +64,19 @@ public class Reserva {
     }
 
     public Hotel getIdHotel() {
-        return idHotel;
+        return hotel;
     }
 
     public void setIdHotel(Hotel idHotel) {
-        this.idHotel = idHotel;
+        this.hotel = idHotel;
     }
 
     public Direccion getIdDireccion() {
-        return idDireccion;
+        return direccion;
     }
 
     public void setIdDireccion(Direccion idDireccion) {
-        this.idDireccion = idDireccion;
+        this.direccion = idDireccion;
     }
-    
-    
-    
-    
+
 }

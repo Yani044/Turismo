@@ -3,21 +3,23 @@ package turismo.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "direcciones")
 public class Direccion {
     @Id
-    String id;
-    String calle;
-    Integer numero;
-    String piso;
-    String dto;
-    Integer codigoPostal;
+    private Integer id;
+    private String calle;
+    private Integer numero;
+    private String piso;
+    private String dto;
+    private Integer codigoPostal;
 
     public Direccion() {
     }
 
-    public Direccion(String id, String calle, Integer numero, String piso, String dto, Integer codigoPostal) {
+    public Direccion(Integer id, String calle, Integer numero, String piso, String dto, Integer codigoPostal) {
         this.id = id;
         this.calle = calle;
         this.numero = numero;
@@ -26,11 +28,11 @@ public class Direccion {
         this.codigoPostal = codigoPostal;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
