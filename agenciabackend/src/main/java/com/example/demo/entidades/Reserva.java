@@ -11,7 +11,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "reservas")
 public class Reserva {
 
     @Id
@@ -20,6 +19,7 @@ public class Reserva {
     private Usuario usuario;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCreacion;
+    @OneToOne
     private Hotel hotel;
     @OneToOne
     private Direccion direccion;
