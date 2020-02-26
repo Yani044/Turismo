@@ -8,7 +8,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "productos")
 public class Producto implements Serializable{
     @Id
    private Integer id;
