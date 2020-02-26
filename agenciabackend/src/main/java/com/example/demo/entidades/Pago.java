@@ -17,7 +17,6 @@ import javax.persistence.Temporal;
  * @author Genesis
  */
 @Entity
-@Table(name = "pagos")
 public class Pago {
 
     @Id

@@ -7,7 +7,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hoteles")
 public class Hotel {
     @Id
     private Integer id;

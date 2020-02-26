@@ -4,29 +4,16 @@ package com.example.demo.servicios;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import com.example.demo.entidades.Usuario;
+import com.example.demo.repositorios.ProductoRepositorio;
+import java.util.Date;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.multipart.MultipartFile;
 
 public class UsuarioService {
     
+    private ProductoRepositorio productoRepositorio;
+            
+  
     
-     public void crearUsuario(String nombre, String apellido, String email, String dni, Integer telefono){
-    
-        EntityManager em = Persistence.createEntityManagerFactory("LIbreriaPU").createEntityManager();
-        em.getTransaction().begin();
-
-        Usuario usuario = new Usuario();
-        usuario.setNombre(nombre);
-        usuario.setApellido(apellido);
-        usuario.setDni(dni);
-        usuario.setEmail(email);
-        usuario.setTelefono(telefono);
-       
-        
-
-         
-        
-        em.persist(usuario);
-        em.getTransaction().commit();
-    
-    
-    }
+     
 }

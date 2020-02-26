@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "direcciones")
 public class Direccion {
     @Id
     private Integer id;
