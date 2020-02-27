@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+
 public class Categoria {
     @Id
     private Integer id;
