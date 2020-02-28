@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="master">
 
 <head>
   <meta charset="UTF-8">
@@ -145,6 +147,7 @@
         <p class="mb-4 d-none d-md-block">
           <strong>Brindando a nuestros visitantes tours pensados para que conmenoren las tierras mendocionas y quieren volver siempre.</strong>
         </p>
+       
 
         <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Comenzar la experiencia
           <i class="fas fa-graduation-cap ml-2"></i>
@@ -163,11 +166,11 @@
   <!--Actividades-->
   <div class="container">
  
-
+      
     <!--Second row-->
     <div class="row">
       <!--First columnn-->
-      <div class="col-lg-4">
+      <div class="col-lg-4" th:each="producto : ${productos}">
         <!--Card-->
         <div class="card wow fadeIn" data-wow-delay="0.2s">
 
@@ -177,10 +180,10 @@
           <!--Card content-->
           <div class="card-body">
             <!--Title-->
-            <h4 class="card-title">Alta Montaña</h4>
+            <h4 class="card-title">${producto.nombre}</h4>
+            
             <!--Text-->
-            <p class="card-text">Conocé Potrerillos, desayuná en Entre dos, con los mejores alfajores. 
-              Recorré Uspalla, Puente del Inca, Mirador del Cerro Aconcagua y Las Cuevas.</p>
+            <p class="card-text">${producto.descripcion}</p>
             <a href="#" class="btn btn-info">Quiero vivirlo</a>
           </div>
 
