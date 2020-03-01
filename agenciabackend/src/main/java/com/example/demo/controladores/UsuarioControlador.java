@@ -3,11 +3,11 @@ package com.example.demo.controladores;
 
 import com.example.demo.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("/")
+@RestController
+@RequestMapping("/usuarios")
 public class UsuarioControlador {
     
     @Autowired
