@@ -5,34 +5,36 @@
  */
 package com.example.demo.servicios;
 
-import com.mercadopago.*;
+import com.mercadopago.MercadoPago;
 import com.mercadopago.exceptions.MPConfException;
 import com.mercadopago.exceptions.MPException;
-import com.mercadopago.resources.Payment;
-import com.mercadopago.resources.datastructures.payment.Payer;
+import com.mercadopago.resources.Preference;
+import com.mercadopago.resources.datastructures.preference.Item;
+
+
 
 public class PagoService {
     
-     public static void MercadoPago (String[] args)throws MPException, MPConfException {
+  public void pagar() throws MPConfException, MPException{
+      
+        // Agrega credenciales
+        MercadoPago.SDK.setAccessToken("PROD_ACCESS_TOKEN");
 
-          MercadoPago.SDK.setClientSecret(System.getenv("CLIENT_SECRET_OK"));
-          MercadoPago.SDK.setClientId(System.getenv("CLIENT_ID_OK"));
+        // Crea un objeto de preferencia
+        Preference preference = new Preference();
 
-          Payment payment = new Payment()
-                  .setTransactionAmount(100f)
-                  .setToken("your_cardtoken")
-                  .setDescription("description")
-                  .setInstallments(1)
-                  .setPaymentMethodId("visa")
-                  .setPayer(new Payer()
-                          .setEmail("dummy_email"));
+        // Crea un ítem en la preferencia
+        Item item = new Item();
+        item.setTitle("Mi producto")
+            .setQuantity(1)
+            .setUnitPrice((float) 75.56);
+        preference.appendItem(item);
+        preference.save();
 
-          payment.save();
+      
+  }
+  
 
-          System.out.println(payment.getStatus());
-
-      }
-    
     
 }
 
