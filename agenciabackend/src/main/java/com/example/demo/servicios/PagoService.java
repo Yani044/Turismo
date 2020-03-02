@@ -31,6 +31,14 @@ public class PagoService {
         preference.appendItem(item);
         preference.save();
 
+        /*   PARA AGREGAR AL BOTON PAGAR
+        <form action="/procesar-pago" method="POST">
+  <script
+   src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+   data-preference-id="${preference.id}">
+  </script>
+</form>
+        */
       
   }
   
